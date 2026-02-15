@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>Generate Favicon</title></head>
+<body>
+<canvas id="c" width="32" height="32"></canvas>
+<script>
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+ctx.fillStyle = '#2c5f7d';
+ctx.fillRect(0, 0, 32, 32);
+ctx.fillStyle = 'white';
+ctx.font = 'bold 20px Arial';
+ctx.textAlign = 'center';
+ctx.textBaseline = 'middle';
+ctx.fillText('NA', 16, 16);
+const link = document.createElement('a');
+link.download = 'favicon.ico';
+link.href = canvas.toDataURL();
+link.textContent = 'Download Favicon';
+document.body.appendChild(link);
+</script>
+</body>
+</html>
